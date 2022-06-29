@@ -61,7 +61,7 @@ int main() {
         std::cin >> encryptionKey;
 
         for (char i : originalText) {
-            encryptedText += (char)(((int)i + (int)encryptionKey) % 127);
+            encryptedText += (char) ((int)i + (int)encryptionKey);
         }
 
         if (selectedOutputToFile == 1) {
@@ -125,7 +125,8 @@ int main() {
         std::cin >> encryptionKey;
 
         for (char i : encryptedText) {
-            originalText += (char)(((int)i - (int)encryptionKey) % 127);
+
+            originalText += (char) ((int)i - (int)encryptionKey);
         }
 
         if (selectedOutputToFile == 1) {
@@ -152,9 +153,6 @@ int main() {
         std::cout << "Error: You entered a non-existent program mode.";
         return -1;
     }
-
-
-
 
     return 0;
 }
